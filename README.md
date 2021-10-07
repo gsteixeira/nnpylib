@@ -30,7 +30,8 @@ Create a neural network.
     size_of_output = 1 # how many on the output.
     hidden_layers = [4,] # a list with the size of each of hidden layers.
     # create the network
-    nn = NewNeuralNetwork(size_of_input, size_of_output, hidden_layers)
+    nn = NewNeuralNetwork(size_of_input, size_of_output, hidden_layers,
+                          method="leaky_relu")
     # train it..
     how_many_times = 10000
     nn.train(input_data, expected_output, how_many_times)
