@@ -8,6 +8,8 @@ NNpylib is built in pure python, it doesn't use numpy, to make it clear as possi
 
 Yet it provides a working reliable neural network that can be used in your applications with minimal effort.
 
+If you want speed, take a look at my [GO implementation](https://github.com/gsteixeira/nngolib). nb
+
 ## Features:
 
 - Support for multiple hidden layers.
@@ -51,5 +53,13 @@ Now you can save your network's state and reuse it later.
     # make predictions with that saved network
     predicted = nn2.predict(foo)
 ```
+
+Test it
+```shell
+    # if you don't have pytest
+    pip install pytest
+    # test it
+    pytest
+``` 
 
 For more ideas, look at *samples* dir.

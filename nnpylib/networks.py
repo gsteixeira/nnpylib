@@ -63,7 +63,7 @@ class NeuralNetwork(object):
             The non linear method to use as logistical function.
     """
     def __init__(self, inputs:int, outputs:int, hidden:list,
-                 learning_rate:float, method:str="leaky_relu"):
+                 learning_rate:float=0.1, method:str="leaky_relu"):
         """ setup nn layers
         :param inputs: the number of neurons in the input layer
         :param outputs: the number of neurons in the output layer
@@ -150,18 +150,14 @@ class NeuralNetwork(object):
     def back_propagation(self, outputs:list):
         """ The back propagation process.
         Computes the deltas and update the weights and bias.
-        If there' multiple hidden_layers, loops though then back and forth
+        If there' multiple hidden_layers, loops back though then
         """
         last_hidden_layer = self.hidden_layers_number - 1
         k = last_hidden_layer
         self.calc_deltas(self.output_layer, self.hidden_layers[k])
-        while k > 0:
-            self.calc_deltas(self.hidden_layers[k], self.hidden_layers[k-1])
-            k -= 1
-        # update weights
-        k = last_hidden_layer
         self.update_weights(self.output_layer, self.hidden_layers[k])
         while k > 0:
+            self.calc_deltas(self.hidden_layers[k], self.hidden_layers[k-1])
             self.update_weights(self.hidden_layers[k],
                                 self.hidden_layers[k-1])
             k -= 1
