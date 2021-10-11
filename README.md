@@ -8,8 +8,6 @@ NNpylib is built in pure python, it doesn't use numpy, to make it clear as possi
 
 Yet it provides a working reliable neural network that can be used in your applications with minimal effort.
 
-If you want speed, take a look at my [GO implementation](https://github.com/gsteixeira/nngolib). nb
-
 ## Features:
 
 - Support for multiple hidden layers.
