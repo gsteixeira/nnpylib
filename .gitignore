@@ -1,0 +1,6 @@
+build/
+dist/
+nnpylib.egg-info/
+__pycache__/
+.pytest_cache/
+
