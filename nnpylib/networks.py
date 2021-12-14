@@ -40,10 +40,12 @@ class Layer(object):
         self.bias = [random.uniform(0, 1) for i in range(n_nodes)]
         self.deltas = [random.uniform(0, 1) for i in range(n_nodes)]
         #initialize weights (synapses)
-        self.weights = [[None] * n_nodes] * n_synapses
+        self.weights = []
         for i in range(n_synapses):
+            row = []
             for j in range(n_nodes):
-                self.weights[i][j] = random.uniform(0, 1)
+                row.append(random.uniform(0, 1))
+            self.weights.append(row)
 
 class NeuralNetwork(object):
     """
